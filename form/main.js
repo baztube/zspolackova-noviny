@@ -1,3 +1,17 @@
+let name = ""
+let description = ""
+let urlName = ""
+let lenght = ""
+let minutes = ""
+let author = ""
+let imageAuthor = ""
+let linkToImage = ""
+let alt = ""
+let image = ""
+let category = ""
+let text = ""
+let date = ""
+
 function readFileAsDataURI(file, callback) {
   var reader = new FileReader();
   reader.onload = function(event) {
@@ -14,21 +28,6 @@ fileInput.addEventListener('change', function(event) {
     image = dataURI
   });
 });
-
-
-let name = ""
-let description = ""
-let urlName = ""
-let lenght = ""
-let minutes = ""
-let author = ""
-let imageAuthor = ""
-let linkToImage = ""
-let alt = ""
-let image = ""
-let category = ""
-let text = ""
-let date = ""
 
 function getData(){
 name = document.getElementById("name").value
@@ -55,104 +54,271 @@ console.log("succes")
 function buildPage(){
     let page = `
     <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>${name} - Školní noviny ZŠ Poláčkova</title>
-    <link rel="icon" type="image/x-icon" href="../logo-light.png" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-
-  <body>
-    <div class="container">
-      <header>
-        <div class="news-title">
-          <a href="../index.html"
-            ><img class="icon" src="../logo-light.png" /></a
-          ><a href="../index.html" class="name">ŠKOLNÍ NOVINY ZŠ POLÁČKOVÁ</a>
-        </div>
-        <div class="info">
-          <div class="tags">
-            <i class="fa-solid fa-tag"></i>
-            <span>${category}</span>
-          </div>
-          <h1 class="title">${name}</h1>
-          <p class="subtitle">
-            $
-          </p>
-        </div>
-      </header>
-
-      <section class="details">
-        <div class="item">
-          <h5 class="item-title">Délka</h5>
-          <p class="item-text"><span class="item-data">3</span> Minuty</p>
-        </div>
-        <div class="item">
-          <h5 class="item-title">Datum zveřenění</h5>
-          <p class="item-text">
-            <span class="item-data">Květen 27, 2023</span>
-          </p>
-        </div>
-        <div class="item">
-          <h5 class="item-title">Napsal</h5>
-          <p class="item-text"><span class="item-data">Petr Novák</span></p>
-        </div>
-        <div class="item">
-          <h5 class="item-title">Autor obrázku</h5>
-          <p class="item-text">
-            <span class="item-data"
-              ><a
-                target="_blank"
-                href="https://pixabay.com/photos/football-soccer-ball-stadium-sport-4761895/"
-                >brokerx</a
-              ></span
-            >
-          </p>
-        </div>
-      </section>
-      <article>
-        <h4>Podkategorie 1</h4>
-        <p>
-          V ranních hodinách se smíšený výběr bojovníků a bojovnic ze ZŠ
-          Poláčkova vydal na bitevní pole ABC Braník. Náš tým čekal souboj s
-          každou přihlášenou základní školou, což byly celkem 4 bitvy. Obranná
-          trojice si pro soupeře namíchala nepropustný beton, který byl poprvé
-          překonán až ve třetím souboji. Gól padl nikoliv z kopačky
-          nepřátelského útočníka, nýbrž nešťastným odrazem od našeho obránce.
-          Naštěstí zbytek týmu zahrál virtuózní ofenzivní představení, jehož
-          výsledkem bylo celkem 12 gólů a radost při vítězném zdvižení poháru
-          nad hlavu.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id illo nisi
-          laborum ipsum recusandae eius molestias, dolore consectetur
-          praesentium aperiam odio accusantium dicta, deleniti illum incidunt.
-          Earum aliquam doloremque quasi.
-        </p>
-        <blockquote>
-          "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-          officia deserunt mollit anim id est laborum, dolore consectetur
-          praesentium aperiam odio accusantium dicta, deleniti illum incidunt. "
-          &mdash; Někdo
-        </blockquote>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-      </article>
-    </div>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>${name} - Školní noviny ZŠ Poláčkova</title>
+        <link rel="icon" type="image/x-icon" href="../logo-light.png" />
+        <link rel="stylesheet" href="style.css" />
+      </head>
     
-  </body>
-</html>
+      <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html{
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: "Poppins", sans-serif;
+      display: flex;
+      justify-content: center;
+      height: 100vh;
+      color: #fff;
+      background-color: #202020;
+      padding: 50px;
+    }
+    
+    body .container {
+      max-width: 1000px;
+    }
+    
+    body .container header { 
+      background: linear-gradient(#0000, #000f), url("${image}") center / cover no-repeat ;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 400px;
+      padding: 20px 50px 60px;
+      border-radius: 16px;
+    }
+    
+    body .container header .category .name {
+      font-size: 1.2rem;
+      font-weight: bold;
+      letter-spacing: 0.3rem;
+      text-transform: uppercase;
+    }
+    
+    .name {
+      font-weight: 700;
+      font-size: 2rem;
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    .name:hover {
+      color: #fff;
+    }
+    
+    .icon{
+      -webkit-user-drag: none;
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      height: 3rem;
+      width: 3rem;
+      margin-right: 16px;
+    }
+    
+    body .container header .info {
+      text-align: center;
+    }
+    
+    body .container header .info .tags i {
+      font-size: 18px;
+      margin-right: 4px;
+    }
+    
+    body .container header .info .tags span {
+      font-size: 0.8rem;
+    }
+    
+    body .container header .info .title {
+      margin: 20px 0;
+      font-size: 3rem;
+      font-weight: bold;
+    }
+    
+    body .container header .info .subtitle {
+      min-width: 70%;
+      margin: 0 auto 20px;
+      font-size: 1rem;
+    }
+    
+    body .details {
+      display: flex;
+      justify-content: space-between;
+      background: rgba(0, 0, 0, 0.14);
+      margin-top: 50px;
+      padding: 20px 50px;
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.68);
+    }
+    
+    body .details .item .item-title {
+      color: #ddd;
+    }
+    
+    body .details .item .item-text {
+      margin-top: 12px;
+      font-size: 1.5rem;
+    }
+    
+    body article {
+      margin-top: 50px;
+      padding-bottom: 20px;
+      line-height: 1.7;
+    }
+    
+    body article h4 {
+      margin-top: 50px;
+      margin-bottom: 20px;
+      font-size: 1.25rem;
+    }
+    
+    body article p {
+      margin-bottom: 20px;
+      color: #ddd;
+      font-size: 1.1rem;
+    }
+    
+    body article blockquote {
+      margin: 40px 0;
+      background-color: #181818;
+      padding: 30px;
+      border-radius: 16px;
+    }
+    
+    a {
+      color: #fff;
+      transition: 250ms;
+    }
+    
+    a:active {
+      color: #999;
+    }
+    
+    ::-moz-selection {
+      color: #181818;
+      background: #ccca;
+    }
+    
+    ::selection {
+      color: #181818;
+      background: #ccca;
+    }
+    
+    .news-title{
+      display: flex;
+    }
+    
+    .article{
+      color: #ddd;
+    }
+    
+    @media screen and (max-width: 750px) {
+      body .container header {
+        padding: 10px 20px 30px;
+        min-height: 300px;
+      }
+    
+      body .container header .category .name {
+        font-size: 0.9rem;
+      }
+    
+      body .container header .info .title {
+        font-size: 2.2rem;
+      }
+    
+      body .container header .info .subtitle {
+        font-size: 0.8rem;
+      }
+    
+      body .container .details {
+        flex-direction: column;
+      }
+    
+      body .container .details .item:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    
+      .name{
+        font-size: 1rem;
+      }
+    }
+    
+      </style>
+    
+      <body>
+        <div class="container">
+          <header>
+            <div class="news-title">
+              <a href="../index.html"
+                ><img class="icon" src="../logo-light.png" /></a
+              ><a href="../index.html" class="name">ŠKOLNÍ NOVINY ZŠ POLÁČKOVÁ</a>
+            </div>
+            <div class="info">
+              <div class="tags">
+                <i class="fa-solid fa-tag"></i>
+                <span>${category}</span>
+              </div>
+              <h1 class="title">${name}</h1>
+              <p class="subtitle">
+              ${description}
+              </p>
+            </div>
+          </header>
+    
+          <section class="details">
+            <div class="item">
+              <h5 class="item-title">Délka</h5>
+              <p class="item-text"><span class="item-data">${lenght}</span> ${minutes}</p>
+            </div>
+            <div class="item">
+              <h5 class="item-title">Datum zveřenění</h5>
+              <p class="item-text">
+                <span class="item-data">${date}</span>
+              </p>
+            </div>
+            <div class="item">
+              <h5 class="item-title">Napsal</h5>
+              <p class="item-text"><span class="item-data">${author}</span></p>
+            </div>
+            <div class="item">
+              <h5 class="item-title">Autor obrázku</h5>
+              <p class="item-text">
+                <span class="item-data"
+                  ><a
+                    target="_blank"
+                    href="${linkToImage}"
+                    >${imageAuthor}
+                  </a>
+                </span>
+              </p>
+            </div>
+          </section>
+          <article>
+            ${text}
+          </article>
+        </div>
+        
+      </body>
+    </html>
+    
     `
 
+    var myWindow = window.open("", "MsgWindow", "width=800,height=600");
+  myWindow.document.write(page);
     return(page)
 }
 
