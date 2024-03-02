@@ -15,16 +15,16 @@
         <form style="width: 90%; max-width: 600px;">
             <h2>Základní informace</h2>
             <label for="name">Název</label>
-            <input style="width: 100%;" placeholder="Toto je příklad" id="name" maxlength="30" type="text" required>
+            <input style="width: 100%;" value="Toto je příklad" id="name" maxlength="30" type="text" required>
             <br>
             <label for="description">Popis</label>
-            <input style="width: 100%;" placeholder="Tento článek slouži k demonstraci toho jak tento formulář vyplnit." id="description" maxlength="200" type="text" required>
+            <input style="width: 100%;" value="Tento článek slouži k demonstraci toho jak tento formulář vyplnit." id="description" maxlength="200" type="text" required>
             <br>
             <label for="urlName">URL Název</label>
-            <input style="width: 100%;" placeholder="toto-je-priklad" id="urlName" maxlength="30" type="text" required>
+            <input style="width: 100%;" value="toto-je-priklad" id="urlName" maxlength="30" type="text" required>
             <br>
             <label for="lenght">Délka čtení</label>
-            <input style="width: 100%;" onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'" placeholder="4" id="lenght" type="number" required>
+            <input style="width: 100%;" onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'" value="4" id="lenght" type="number" required>
             <select name="minutes" id="minutes" required>
                 <option value="minuta">minuta</option>
                 <option value="minuty">minuty</option>
@@ -32,19 +32,19 @@
             </select>
             <br>
             <label for="author">Autor</label>
-            <input style="width: 100%;" placeholder="Petr Novák" id="author" type="text" required>
+            <input style="width: 100%;" value="Petr Novák" id="author" type="text" required>
             <br>
             <label for="category">Kategorie</label>
-            <input style="width: 100%;" placeholder="Test" id="category" type="text" required>
+            <input style="width: 100%;" value="Test" id="category" type="text" required>
             <h2>Obrázek</h2>
             <label for="imageAuthor">Autor obrázku</label>
-            <input style="width: 100%;" placeholder="Alan Bonfils" id="imageAuthor" type="text" required>
+            <input style="width: 100%;" value="Alan Bonfils" id="imageAuthor" type="text" required>
             <br>
             <label for="linkToImage">Odkaz na obrázek</label>
-            <input style="width: 100%;" placeholder="https://pixabay.com/photos/..." id="linkToImage" type="url" required>
+            <input style="width: 100%;" value="https://pixabay.com/photos/..." id="linkToImage" type="url" required>
             <br>
             <label for="imageAuthor">Alternativní text obrázku</label>
-            <input onchange="imagePreview()" style="width: 100%;" placeholder="Želva plavajcí ve vibrantní vodě" id="alt" type="text" required>
+            <input onchange="imagePreview()" style="width: 100%;" value="Želva plavajcí ve vibrantní vodě" id="alt" type="text" required>
             <br>
             <label for="image">Obrázek</label>
             <input onchange="imagePreview()" style="width: 100%;" id="image" type="file" accept="image/jpeg" required>

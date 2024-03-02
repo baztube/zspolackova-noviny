@@ -12,22 +12,23 @@ let category = ""
 let text = ""
 let date = ""
 
-function readFileAsDataURI(file, callback) {
-  var reader = new FileReader();
-  reader.onload = function(event) {
-    callback(event.target.result);
-  };
-  reader.readAsDataURL(file);
+function previewFile() {
+  const file = document.getElementById("image");
+  const reader = new FileReader();
+
+  reader.addEventListener(
+    "load",
+    () => {
+      image = reader.result;
+    },
+    false,
+  );
+
+  if (file) {
+    reader.readAsDataURL(file);
+  }
 }
 
-// Example usage:
-var fileInput = document.getElementById('image');
-fileInput.addEventListener('change', function(event) {
-  var file = event.target.files[0];
-  readFileAsDataURI(file, function(dataURI) {
-    image = dataURI
-  });
-});
 
 function getData(){
 name = document.getElementById("name").value
@@ -39,20 +40,19 @@ author = document.getElementById("author").value
 imageAuthor = document.getElementById("imageAuthor").value
 linkToImage = document.getElementById("linkToImage").value
 alt = document.getElementById("linkToImage").value
-image = document.getElementById("image")
 category = document.getElementById("category").value
 text = document.getElementById("text").value
 
 const today = new Date();
 const dd = String(today.getDate()).padStart(2, '0');
-const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+const mm = String(today.getMonth() + 1).padStart(2, '0');
 const yyyy = today.getFullYear();
 date = dd + '.' + mm + '. ' + yyyy;
 console.log("succes")
 buildPage()
 }
 
-function buildPage(){
+function buildPage(){  
     let page = `
     <!DOCTYPE html>
     <html lang="en">
@@ -61,7 +61,6 @@ function buildPage(){
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>${name} - Školní noviny ZŠ Poláčkova</title>
         <link rel="icon" type="image/x-icon" href="../logo-light.png" />
-        <link rel="stylesheet" href="style.css" />
       </head>
     
       <style>
@@ -92,7 +91,7 @@ function buildPage(){
     }
     
     body .container header { 
-      background: linear-gradient(#0000, #000f), url("${image}") center / cover no-repeat ;
+      background: linear-gradient(#0000, #000f), url("${previewFile()}") center / cover no-repeat ;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
