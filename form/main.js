@@ -1,4 +1,5 @@
 let name = ""
+let description = ""
 let urlName = ""
 let lenght = ""
 let minutes = ""
@@ -12,17 +13,18 @@ let text = ""
 let date = ""
 
 function getData(){
-name = document.getElementById("name")
-urlName = document.getElementById("urlName")
-lenght = document.getElementById("lenght")
-minutes = document.getElementById("minutes")
-author = document.getElementById("author")
-imageAuthor = document.getElementById("imageAuthor")
-linkToImage = document.getElementById("linkToImage")
-alt = document.getElementById("linkToImage")
+name = document.getElementById("name").value
+description = document.getElementById("description").value
+urlName = document.getElementById("urlName").value
+lenght = document.getElementById("lenght").value
+minutes = document.getElementById("minutes").value
+author = document.getElementById("author").value
+imageAuthor = document.getElementById("imageAuthor").value
+linkToImage = document.getElementById("linkToImage").value
+alt = document.getElementById("linkToImage").value
 image = document.getElementById("image")
-category = document.getElementById("category")
-text = document.getElementById("text")
+category = document.getElementById("category").value
+text = document.getElementById("text").value
 
 const today = new Date();
 const dd = String(today.getDate()).padStart(2, '0');
@@ -39,7 +41,7 @@ function buildPage(){
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>`+ name.value  +` - Školní noviny ZŠ Poláčkova</title>
+    <title>${name} - Školní noviny ZŠ Poláčkova</title>
     <link rel="icon" type="image/x-icon" href="../logo-light.png" />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -55,13 +57,11 @@ function buildPage(){
         <div class="info">
           <div class="tags">
             <i class="fa-solid fa-tag"></i>
-            <span>Sport, Soutěž</span>
+            <span>${category}</span>
           </div>
-          <h1 class="title">Úspěch ve sportovní soutěži</h1>
+          <h1 class="title">${name}</h1>
           <p class="subtitle">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
-            consequatur cupiditate incidunt cumque illo alias, odit dolorem et
-            reprehenderit.
+            $
           </p>
         </div>
       </header>
