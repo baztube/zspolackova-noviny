@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="logo-light.png" />
+    <title>Školní noviny ZŠ Poláčkova</title>
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+
+    <section class="main-section">
+      <div class="maincontent">
+        <p>Školní noviny ZŠ Poláčkova</p>
+      </div>
+      <a href="#články" class="bottom-text hidden">Sjeďte dolů pro více</a>
+    </section>
+
+    <section id="články" class="articles">
+      <h1 class="articlesTitle">Články</h1>
+      <span class="search">
+        <span style="user-select: none" class="material-symbols-outlined">
+          search
+        </span>
+        <input
+          class="searchInput"
+          type="text"
+          maxlength="200"
+          placeholder="Prohledat články (prozatím nefunkční)"
+        />
+      </span>
+
+      <div class="card">
+        <div class="image">
+          <img class="imageImage" src="uspech-ve-sportovni-soutezi/bg.jpg" />
+        </div>
+        <div class="text">
+          <h1 class="cardTitle">Úspěch ve sportovní soutěži</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elitar. Dolorem
+            quisquam nihil odio quasi, molestias reprehenderit incidunt ratione
+            accusamus est atque, quibusdam culpa in iste minima totamin nisi.
+          </p>
+          <!--Max lenght: 200 characters-->
+          <a
+            class="readButtonWrapper"
+            href="uspech-ve-sportovni-soutezi/index.html"
+          >
+            <button class="readButton">Číst</button>
+          </a>
+        </div>
+      </div>
+      <hr />
+      <div class="card">
+        <div class="image">
+          <img class="imageImage" src="deti-detem/bg.jpg" />
+        </div>
+        <div class="text">
+          <h1 class="cardTitle">Děti dětem</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elitar. Dolorem
+            quisquam nihil odio quasi, molestias reprehenderit incidunt ratione
+            accusamus est atque, quibusdam culpa in iste minima totamin nisi.
+          </p>
+          <!--Max lenght: 200 characters-->
+          <a class="readButtonWrapper" href="deti-detem/index.html">
+            <button class="readButton">Číst</button>
+          </a>
+        </div>
+      </div>
+      <hr />
+      <div class="card">
+        <div class="image">
+          <img class="imageImage" src="bg.jpg" />
+        </div>
+        <div class="text">
+          <h1 class="cardTitle">Úspěch ve sportovní soutěži</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elitar. Dolorem
+            quisquam nihil odio quasi, molestias reprehenderit incidunt ratione
+            accusamus est atque, quibusdam culpa in iste minima totamin nisi.
+          </p>
+          <!--Max lenght: 200 characters-->
+          <a>
+            <button class="readButton">Číst</button>
+          </a>
+        </div>
+      </div>
+      <hr />
+      <div id="showMoreText" class="showMoreText">
+        <a id="showMoreLink" class="showMoreLink" onclick="showmore()"
+          ><span class="material-symbols-outlined"> expand_more </span>Načíst
+          všechny články</a
+        >
+      </div>
+      <div id="showMore" class="showMore">
+        <div class="card">
+          <div class="image">
+            <img class="imageImage" src="uspech-ve-sportovni-soutezi/bg.jpg" />
+          </div>
+          <div class="text">
+            <h1 class="cardTitle">Úspěch ve sportovní soutěži</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elitar. Dolorem
+              quisquam nihil odio quasi, molestias reprehenderit incidunt
+              ratione accusamus est atque, quibusdam culpa in iste minima
+              totamin nisi.
+            </p>
+            <!--Max lenght: 200 characters-->
+            <a
+              class="readButtonWrapper"
+              href="uspech-ve-sportovni-soutezi/index.html"
+            >
+              <button class="readButton">Číst</button>
+            </a>
+          </div>
+        </div>
+        <hr />
+        <div class="card">
+          <div class="image">
+            <img class="imageImage" src="deti-detem/bg.jpg" />
+          </div>
+          <div class="text">
+            <h1 class="cardTitle">Děti dětem</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elitar. Dolorem
+              quisquam nihil odio quasi, molestias reprehenderit incidunt
+              ratione accusamus est atque, quibusdam culpa in iste minima
+              totamin nisi.
+            </p>
+            <!--Max lenght: 200 characters-->
+            <a class="readButtonWrapper" href="deti-detem/index.html">
+              <button class="readButton">Číst</button>
+            </a>
+          </div>
+        </div>
+        <hr />
+        <div class="card">
+          <div class="image">
+            <img class="imageImage" src="bg.jpg" />
+          </div>
+          <div class="text">
+            <h1 class="cardTitle">Úspěch ve sportovní soutěži</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elitar. Dolorem
+              quisquam nihil odio quasi, molestias reprehenderit incidunt
+              ratione accusamus est atque, quibusdam culpa in iste minima
+              totamin nisi.
+            </p>
+            <!--Max lenght: 200 characters-->
+            <a>
+              <button class="readButton">Číst</button>
+            </a>
+          </div>
+        </div>
+        <hr />
+        <div class="card">
+          <div class="image">
+            <img class="imageImage" src="uspech-ve-sportovni-soutezi/bg.jpg" />
+          </div>
+          <div class="text">
+            <h1 class="cardTitle">Úspěch ve sportovní soutěži</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elitar. Dolorem
+              quisquam nihil odio quasi, molestias reprehenderit incidunt
+              ratione accusamus est atque, quibusdam culpa in iste minima
+              totamin nisi.
+            </p>
+            <!--Max lenght: 200 characters-->
+            <a
+              class="readButtonWrapper"
+              href="uspech-ve-sportovni-soutezi/index.html"
+            >
+              <button class="readButton">Číst</button>
+            </a>
+          </div>
+        </div>
+        <hr />
+        <div class="card">
+          <div class="image">
+            <img class="imageImage" src="deti-detem/bg.jpg" />
+          </div>
+          <div class="text">
+            <h1 class="cardTitle">Děti dětem</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elitar. Dolorem
+              quisquam nihil odio quasi, molestias reprehenderit incidunt
+              ratione accusamus est atque, quibusdam culpa in iste minima
+              totamin nisi.
+            </p>
+            <!--Max lenght: 200 characters-->
+            <a class="readButtonWrapper" href="deti-detem/index.html">
+              <button class="readButton">Číst</button>
+            </a>
+          </div>
+        </div>
+        <hr />
+        <div class="card">
+          <div class="image">
+            <img class="imageImage" src="bg.jpg" />
+          </div>
+          <div class="text">
+            <h1 class="cardTitle">Úspěch ve sportovní soutěži</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elitar. Dolorem
+              quisquam nihil odio quasi, molestias reprehenderit incidunt
+              ratione accusamus est atque, quibusdam culpa in iste minima
+              totamin nisi.
+            </p>
+            <!--Max lenght: 200 characters-->
+            <a>
+              <button class="readButton">Číst</button>
+            </a>
+          </div>
+        </div>
+        <hr />
+        <div class="card">
+          <div class="image">
+            <img class="imageImage" src="uspech-ve-sportovni-soutezi/bg.jpg" />
+          </div>
+          <div class="text">
+            <h1 class="cardTitle">Úspěch ve sportovní soutěži</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elitar. Dolorem
+              quisquam nihil odio quasi, molestias reprehenderit incidunt
+              ratione accusamus est atque, quibusdam culpa in iste minima
+              totamin nisi.
+            </p>
+            <!--Max lenght: 200 characters-->
+            <a
+              class="readButtonWrapper"
+              href="uspech-ve-sportovni-soutezi/index.html"
+            >
+              <button class="readButton">Číst</button>
+            </a>
+          </div>
+        </div>
+        <hr />
+        <div class="card">
+          <div class="image">
+            <img class="imageImage" src="deti-detem/bg.jpg" />
+          </div>
+          <div class="text">
+            <h1 class="cardTitle">Děti dětem</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elitar. Dolorem
+              quisquam nihil odio quasi, molestias reprehenderit incidunt
+              ratione accusamus est atque, quibusdam culpa in iste minima
+              totamin nisi.
+            </p>
+            <!--Max lenght: 200 characters-->
+            <a class="readButtonWrapper" href="deti-detem/index.html">
+              <button class="readButton">Číst</button>
+            </a>
+          </div>
+        </div>
+        <hr />
+        <div class="card">
+          <div class="image">
+            <img class="imageImage" src="bg.jpg" />
+          </div>
+          <div class="text">
+            <h1 class="cardTitle">Úspěch ve sportovní soutěži</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elitar. Dolorem
+              quisquam nihil odio quasi, molestias reprehenderit incidunt
+              ratione accusamus est atque, quibusdam culpa in iste minima
+              totamin nisi.
+            </p>
+            <!--Max lenght: 200 characters-->
+            <a>
+              <button class="readButton">Číst</button>
+            </a>
+          </div>
+        </div>
+        <hr />
+        <div class="card">
+          <div class="image">
+            <img class="imageImage" src="uspech-ve-sportovni-soutezi/bg.jpg" />
+          </div>
+          <div class="text">
+            <h1 class="cardTitle">Úspěch ve sportovní soutěži</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elitar. Dolorem
+              quisquam nihil odio quasi, molestias reprehenderit incidunt
+              ratione accusamus est atque, quibusdam culpa in iste minima
+              totamin nisi.
+            </p>
+            <!--Max lenght: 200 characters-->
+            <a
+              class="readButtonWrapper"
+              href="uspech-ve-sportovni-soutezi/index.html"
+            >
+              <button class="readButton">Číst</button>
+            </a>
+          </div>
+        </div>
+        <hr />
+        <div class="card">
+          <div class="image">
+            <img class="imageImage" src="deti-detem/bg.jpg" />
+          </div>
+          <div class="text">
+            <h1 class="cardTitle">Děti dětem</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elitar. Dolorem
+              quisquam nihil odio quasi, molestias reprehenderit incidunt
+              ratione accusamus est atque, quibusdam culpa in iste minima
+              totamin nisi.
+            </p>
+            <!--Max lenght: 200 characters-->
+            <a class="readButtonWrapper" href="deti-detem/index.html">
+              <button class="readButton">Číst</button>
+            </a>
+          </div>
+        </div>
+        <hr />
+        <div class="card">
+          <div class="image">
+            <img class="imageImage" src="bg.jpg" />
+          </div>
+          <div class="text">
+            <h1 class="cardTitle">Úspěch ve sportovní soutěži</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elitar. Dolorem
+              quisquam nihil odio quasi, molestias reprehenderit incidunt
+              ratione accusamus est atque, quibusdam culpa in iste minima
+              totamin nisi.
+            </p>
+            <!--Max lenght: 200 characters-->
+            <a>
+              <button class="readButton">Číst</button>
+            </a>
+          </div>
+        </div>
+        <hr />
+        <div class="card">
+          <div class="image">
+            <img class="imageImage" src="uspech-ve-sportovni-soutezi/bg.jpg" />
+          </div>
+          <div class="text">
+            <h1 class="cardTitle">Úspěch ve sportovní soutěži</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elitar. Dolorem
+              quisquam nihil odio quasi, molestias reprehenderit incidunt
+              ratione accusamus est atque, quibusdam culpa in iste minima
+              totamin nisi.
+            </p>
+            <!--Max lenght: 200 characters-->
+            <a
+              class="readButtonWrapper"
+              href="uspech-ve-sportovni-soutezi/index.html"
+            >
+              <button class="readButton">Číst</button>
+            </a>
+          </div>
+        </div>
+        <hr />
+        <div class="card">
+          <div class="image">
+            <img class="imageImage" src="deti-detem/bg.jpg" />
+          </div>
+          <div class="text">
+            <h1 class="cardTitle">Děti dětem</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elitar. Dolorem
+              quisquam nihil odio quasi, molestias reprehenderit incidunt
+              ratione accusamus est atque, quibusdam culpa in iste minima
+              totamin nisi.
+            </p>
+            <!--Max lenght: 200 characters-->
+            <a class="readButtonWrapper" href="deti-detem/index.html">
+              <button class="readButton">Číst</button>
+            </a>
+          </div>
+        </div>
+        <hr />
+        <div class="card">
+          <div class="image">
+            <img class="imageImage" src="bg.jpg" />
+          </div>
+          <div class="text">
+            <h1 class="cardTitle">Úspěch ve sportovní soutěži</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elitar. Dolorem
+              quisquam nihil odio quasi, molestias reprehenderit incidunt
+              ratione accusamus est atque, quibusdam culpa in iste minima
+              totamin nisi.
+            </p>
+            <!--Max lenght: 200 characters-->
+            <a>
+              <button class="readButton">Číst</button>
+            </a>
+          </div>
+        </div>
+        <hr />
+        <div class="card">
+          <div class="image">
+            <img class="imageImage" src="uspech-ve-sportovni-soutezi/bg.jpg" />
+          </div>
+          <div class="text">
+            <h1 class="cardTitle">Úspěch ve sportovní soutěži</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elitar. Dolorem
+              quisquam nihil odio quasi, molestias reprehenderit incidunt
+              ratione accusamus est atque, quibusdam culpa in iste minima
+              totamin nisi.
+            </p>
+            <!--Max lenght: 200 characters-->
+            <a
+              class="readButtonWrapper"
+              href="uspech-ve-sportovni-soutezi/index.html"
+            >
+              <button class="readButton">Číst</button>
+            </a>
+          </div>
+        </div>
+        <hr />
+        <div class="card">
+          <div class="image">
+            <img class="imageImage" src="deti-detem/bg.jpg" />
+          </div>
+          <div class="text">
+            <h1 class="cardTitle">Děti dětem</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elitar. Dolorem
+              quisquam nihil odio quasi, molestias reprehenderit incidunt
+              ratione accusamus est atque, quibusdam culpa in iste minima
+              totamin nisi.
+            </p>
+            <!--Max lenght: 200 characters-->
+            <a class="readButtonWrapper" href="deti-detem/index.html">
+              <button class="readButton">Číst</button>
+            </a>
+          </div>
+        </div>
+        <hr />
+        <div class="card">
+          <div class="image">
+            <img class="imageImage" src="bg.jpg" />
+          </div>
+          <div class="text">
+            <h1 class="cardTitle">Úspěch ve sportovní soutěži</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elitar. Dolorem
+              quisquam nihil odio quasi, molestias reprehenderit incidunt
+              ratione accusamus est atque, quibusdam culpa in iste minima
+              totamin nisi.
+            </p>
+            <!--Max lenght: 200 characters-->
+            <a>
+              <button class="readButton">Číst</button>
+            </a>
+          </div>
+        </div>
+        <hr />
+        <div class="card">
+          <div class="image">
+            <img class="imageImage" src="uspech-ve-sportovni-soutezi/bg.jpg" />
+          </div>
+          <div class="text">
+            <h1 class="cardTitle">Úspěch ve sportovní soutěži</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elitar. Dolorem
+              quisquam nihil odio quasi, molestias reprehenderit incidunt
+              ratione accusamus est atque, quibusdam culpa in iste minima
+              totamin nisi.
+            </p>
+            <!--Max lenght: 200 characters-->
+            <a
+              class="readButtonWrapper"
+              href="uspech-ve-sportovni-soutezi/index.html"
+            >
+              <button class="readButton">Číst</button>
+            </a>
+          </div>
+        </div>
+        <hr />
+        <div class="card">
+          <div class="image">
+            <img class="imageImage" src="deti-detem/bg.jpg" />
+          </div>
+          <div class="text">
+            <h1 class="cardTitle">Děti dětem</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elitar. Dolorem
+              quisquam nihil odio quasi, molestias reprehenderit incidunt
+              ratione accusamus est atque, quibusdam culpa in iste minima
+              totamin nisi.
+            </p>
+            <!--Max lenght: 200 characters-->
+            <a class="readButtonWrapper" href="deti-detem/index.html">
+              <button class="readButton">Číst</button>
+            </a>
+          </div>
+        </div>
+        <hr />
+        <div class="card">
+          <div class="image">
+            <img class="imageImage" src="bg.jpg" />
+          </div>
+          <div class="text">
+            <h1 class="cardTitle">Úspěch ve sportovní soutěži</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elitar. Dolorem
+              quisquam nihil odio quasi, molestias reprehenderit incidunt
+              ratione accusamus est atque, quibusdam culpa in iste minima
+              totamin nisi.
+            </p>
+            <!--Max lenght: 200 characters-->
+            <a>
+              <button class="readButton">Číst</button>
+            </a>
+          </div>
+        </div>
+        <hr />
+        <div class="card">
+          <div class="image">
+            <img class="imageImage" src="uspech-ve-sportovni-soutezi/bg.jpg" />
+          </div>
+          <div class="text">
+            <h1 class="cardTitle">Úspěch ve sportovní soutěži</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elitar. Dolorem
+              quisquam nihil odio quasi, molestias reprehenderit incidunt
+              ratione accusamus est atque, quibusdam culpa in iste minima
+              totamin nisi.
+            </p>
+            <!--Max lenght: 200 characters-->
+            <a
+              class="readButtonWrapper"
+              href="uspech-ve-sportovni-soutezi/index.html"
+            >
+              <button class="readButton">Číst</button>
+            </a>
+          </div>
+        </div>
+        <hr />
+        <div class="card">
+          <div class="image">
+            <img class="imageImage" src="deti-detem/bg.jpg" />
+          </div>
+          <div class="text">
+            <h1 class="cardTitle">Děti dětem</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elitar. Dolorem
+              quisquam nihil odio quasi, molestias reprehenderit incidunt
+              ratione accusamus est atque, quibusdam culpa in iste minima
+              totamin nisi.
+            </p>
+            <!--Max lenght: 200 characters-->
+            <a class="readButtonWrapper" href="deti-detem/index.html">
+              <button class="readButton">Číst</button>
+            </a>
+          </div>
+        </div>
+        <hr />
+        <div class="card">
+          <div class="image">
+            <img class="imageImage" src="bg.jpg" />
+          </div>
+          <div class="text">
+            <h1 class="cardTitle">Úspěch ve sportovní soutěži</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elitar. Dolorem
+              quisquam nihil odio quasi, molestias reprehenderit incidunt
+              ratione accusamus est atque, quibusdam culpa in iste minima
+              totamin nisi.
+            </p>
+            <!--Max lenght: 200 characters-->
+            <a>
+              <button class="readButton">Číst</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>Užitečné odkazy</h4>
+            <ul>
+              <li><a href="#">Mapa stránek</a></li>
+              <li><a href="#">Přidejte se k nám</a></li>
+              <li><a href="#">Nahlásit gramatickou chybu</a></li>
+              <li><a href="#">Nahlásit problém se stránkami</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Test</h4>
+            <ul>
+              <li><a href="#">Odkaz 1</a></li>
+              <li><a href="#">Odkaz 2</a></li>
+              <li><a href="#">Odkaz 3</a></li>
+              <li><a href="#">Odkaz 4</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&family=Slackey&display=swap');
+
+*{
+    margin-block: 4px;
+    background-color: #151515;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+
+input, button, select, option{
+    all: unset;
+    margin-block: 4px;
+    background-color: #363636;   
+    padding: 4px;
+    padding-inline: 8px;
+    border-radius: 16px; 
+}
+
+textarea{
+    resize: none;
+}
+
+.bodywrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.pageTitle{
+    text-align: center;
+}

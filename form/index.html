@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Form</title>
+    <script defer src="main.js"></script>
+</head>
+
+<body>
+    <h1 class="pageTitle">Editor článků</h1>
+    <div class="bodywrapper">
+        <form style="width: 90%; max-width: 600px;">
+            <h2>Základní informace</h2>
+            <label for="name">Název</label>
+            <input style="width: 100%;" placeholder="Toto je příklad" id="name" maxlength="30" type="text" required>
+            <br>
+            <label for="urlName">URL Název</label>
+            <input style="width: 100%;" placeholder="toto-je-priklad" id="urlName" maxlength="30" type="text" required>
+            <br>
+            <label for="lenght">Délka čtení</label>
+            <input style="width: 100%;" onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'" placeholder="4" id="lenght" type="number" required>
+            <select name="minutes" id="minutes" required>
+                <option value="minuta">minuta</option>
+                <option value="minuty">minuty</option>
+                <option value="minut">minut</option>
+            </select>
+            <br>
+            <label for="author">Autor</label>
+            <input style="width: 100%;" placeholder="Petr Novák" id="author" type="text" required>
+            <br>
+            <label for="category">Kategorie</label>
+            <input style="width: 100%;" placeholder="Test" id="category" type="text" required>
+            <h2>Obrázek</h2>
+            <label for="imageAuthor">Autor obrázku</label>
+            <input style="width: 100%;" placeholder="Alan Bonfils" id="imageAuthor" type="text" required>
+            <br>
+            <label for="linkToImage">Odkaz na obrázek</label>
+            <input style="width: 100%;" placeholder="https://pixabay.com/photos/..." id="linkToImage" type="url" required>
+            <br>
+            <label for="imageAuthor">Alternativní text obrázku</label>
+            <input onchange="imagePreview()" style="width: 100%;" placeholder="Želva plavajcí ve vibrantní vodě" id="alt" type="text" required>
+            <br>
+            <label for="image">Obrázek</label>
+            <input onchange="imagePreview()" style="width: 100%;" id="image" type="file" accept="image/jpeg" required>
+            <!--musí být ve formátu JPG/JPEG-->
+            <img style="display: block; width: 100%; border-radius: 16px;" src="" alt="" id="preview">
+            <br>
+            <label for="text">Text</label><br>
+            <textarea id="text" style="width: 100%; height: 400px;" required></textarea><br>
+            <button type="button" onclick="getData()">Odeslat</button>
+        </form>
+    </div>
+
+
+    
+</body>
+
+</html>
