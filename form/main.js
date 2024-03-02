@@ -49,6 +49,7 @@ const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 const yyyy = today.getFullYear();
 date = dd + '.' + mm + '. ' + yyyy;
 console.log("succes")
+buildPage()
 }
 
 function buildPage(){
