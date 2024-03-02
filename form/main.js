@@ -1,3 +1,21 @@
+function readFileAsDataURI(file, callback) {
+  var reader = new FileReader();
+  reader.onload = function(event) {
+    callback(event.target.result);
+  };
+  reader.readAsDataURL(file);
+}
+
+// Example usage:
+var fileInput = document.getElementById('image');
+fileInput.addEventListener('change', function(event) {
+  var file = event.target.files[0];
+  readFileAsDataURI(file, function(dataURI) {
+    image = dataURI
+  });
+});
+
+
 let name = ""
 let description = ""
 let urlName = ""
