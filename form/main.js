@@ -6,28 +6,25 @@ let minutes = ""
 let author = ""
 let imageAuthor = ""
 let linkToImage = ""
-let alt = ""
 let image = ""
 let category = ""
 let text = ""
 let date = ""
 
-function previewFile() {
-  const file = document.getElementById("image");
+document.getElementById('image').addEventListener('change', function(event) {
+  const file = event.target.files[0]; // Get the file
   const reader = new FileReader();
 
-  reader.addEventListener(
-    "load",
-    () => {
-      image = reader.result;
-    },
-    false,
-  );
+  reader.onloadend = function() {
+      // This code runs once the FileReader has finished reading the file
+      const dataURI = reader.result;
+      console.log(dataURI); // You can see the Data URI in the console
+      // Now you can store it in a variable for later use. For example:
+      image = dataURI; // Storing it globally for demonstration; adjust as needed.
+  };
 
-  if (file) {
-    reader.readAsDataURL(file);
-  }
-}
+  reader.readAsDataURL(file); // Read the file as Data URI
+});
 
 
 function getData(){
@@ -39,7 +36,6 @@ minutes = document.getElementById("minutes").value
 author = document.getElementById("author").value
 imageAuthor = document.getElementById("imageAuthor").value
 linkToImage = document.getElementById("linkToImage").value
-alt = document.getElementById("linkToImage").value
 category = document.getElementById("category").value
 text = document.getElementById("text").value
 
@@ -91,7 +87,7 @@ function buildPage(){
     }
     
     body .container header { 
-      background: linear-gradient(#0000, #000f), url("${previewFile()}") center / cover no-repeat ;
+      background: linear-gradient(#0000, #000f), url("${image}") center / cover no-repeat ;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -331,25 +327,5 @@ function imagePreview(){
   if (file) {
     preview.src = URL.createObjectURL(file)
     preview.alt = alt
-  }
-}
-
-function previewFile() {
-  const preview = document.querySelector("img");
-  const file = document.getElementById("image").files[0];
-  const reader = new FileReader();
-
-  reader.addEventListener(
-    "load",
-    () => {
-      // convert image file to base64 string
-      const uri = reader.result;
-      console.log(uri)
-    },
-    false,
-  );
-
-  if (file) {
-    reader.readAsDataURL(file);
   }
 }
