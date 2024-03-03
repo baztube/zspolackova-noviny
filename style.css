@@ -258,7 +258,7 @@ ul{
   margin-inline: auto;
   font-size: 24px;
   width: 800px;
-  padding: 8px 16px 8px 16px;
+  padding: 8px 8px 8px 16px;
   max-width: 80%;
   background-color: var(--dark-3);
   border-radius: 999px;
@@ -273,12 +273,42 @@ ul{
   margin-left: 8px;
 }
 
+.searchButton{
+  font-size: 16px;
+  padding: 16px;
+  border-radius: 32px;
+  color: var(--dark-1);
+  background-color: var(--white);
+  transition: 350ms;
+  min-width: 64px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.searchButton:hover {
+  color: var(--white);
+  background-color: var(--dark-1);
+  cursor: pointer;
+}
+
 .colourModeSwitch{
   position: fixed;
   z-index: 999;
   right: 16px;
   top: 16px;
   cursor: pointer;
+}
+
+.easter-egg{
+  position: absolute;
+  top: -100px;
+  right: 32px;
+  transform: rotate(0.5turn);
+  height: 100px;
+  width: 100px;
+  transition: 1s linear;
 }
 
 @media(max-width: 767px){

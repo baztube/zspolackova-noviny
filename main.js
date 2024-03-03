@@ -33,3 +33,28 @@ function showmore() {
   }
 }
 
+
+const mario = document.getElementById("easter-egg")
+const sequenceToDetect = "mario";
+let currentPosition = 0;
+
+// Add event listener for key presses
+document.addEventListener('keydown', function(event) {
+    if (event.key === sequenceToDetect[currentPosition]) {
+        currentPosition++;
+        
+        // Check if the entire sequence has been detected
+        if (currentPosition === sequenceToDetect.length) {
+          mario.style.top = "0px"
+          var audio = new Audio('mario.mp3');
+audio.play();
+          setTimeout(function() {
+            mario.style.top = "-100px"
+        }, 3000);
+            console.log("Sequence detected!");
+            currentPosition = 0;
+        }
+    } else {
+        currentPosition = 0;
+    }
+});

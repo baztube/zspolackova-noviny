@@ -98,24 +98,6 @@ function levenshtein(s, t) {
 function setPTo(text){
     document.getElementById("return").innerHTML = text
 }
-
-var xhr = new XMLHttpRequest();
-var jsonData; // Variable to store the data
-
-xhr.open('GET', 'https://raw.githubusercontent.com/username/repository/branch/path/to/file.json', true);
-
-xhr.onreadystatechange = function () {
-    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-        jsonData = JSON.parse(xhr.responseText);
-        // Now jsonData variable holds the data
-        console.log(jsonData);
-    } else {
-        console.error('Error fetching data:', xhr.status);
-    }
-};
-
-xhr.send();
-
 const data = [
     {
         "name": "Chartativní sbírka"
