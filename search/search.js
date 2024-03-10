@@ -144,7 +144,7 @@ function searchData(searchTerm, searchData){
     for (var i = 0; i < arrayData.length; i++) {
         const smallest = Math.min(...ranked);
         const position = ranked.indexOf(smallest);
-        dataRanked.push(data[position]);
+        dataRanked.push(searchData[position]);
         ranked[position] = 999;
     }
     return(dataRanked)
@@ -196,7 +196,8 @@ async function fetchGitHubRawContent(username, repository, path) {
         console.log(searchContent)
         const searchTerm = getSearchTerm();
         console.log(extractNames(searchContent))
-        searchData(searchTerm, searchContent);
+        const rankedData = searchData(searchTerm, searchContent);
+        console.log(rankedData)
     })
     .catch(error => {
         console.error('Error:', error);
