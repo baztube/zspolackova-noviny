@@ -164,7 +164,7 @@ function getSearchTerm(){
 
 function removeFromArray(array, keyToRemove) {
         if (!Array.isArray(array)) {
-        console.error("Input is not an array.");
+        console.error("Input is not an array. Its type is:" + typeof(array));
         return array;
     }
     return array.map(obj => {
@@ -192,7 +192,8 @@ async function fetchGitHubRawContent(username, repository, path) {
     fetchGitHubRawContent("baztube", "zspolackova-noviny", "clanky.json")
     .then(rawContent => {
         console.log('Raw content:', rawContent);
-        const searchContent = removeFromArray(rawContent, "html")
+        const searchContent = removeFromArray(JSON.parse(rawContent), "html")
+        console.log(searchContent)
         const searchTerm = getSearchTerm();
         console.log(extractNames(searchContent))
         searchData(searchTerm, searchContent);
