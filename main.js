@@ -58,3 +58,8 @@ audio.play();
         currentPosition = 0;
     }
 });
+
+function openSearch(){
+  const searchTerm = document.getElementById("searchInput").value
+  window.open("./search/index.html#" + searchTerm);
+}

@@ -100,7 +100,8 @@ function setPTo(text){
 }
 const data = [
     {
-        "name": "Chartativní sbírka"
+        "name": "Chartativní sbírka",
+        "super": "cool"
     },
     {
         "name": "Fotbalové utkáni"
@@ -125,28 +126,77 @@ function extractNames(data) {
     return names;
 }
 
-function searchData(searchTerm){
-    const arrayData = extractNames(data)
+function searchData(searchTerm, searchData){
+    console.log(searchData);
+    const arrayData = extractNames(searchData);
+    console.log(arrayData);
     let ranked = []
     let dataRanked = []
     for (var i = 0; i < arrayData.length; i++) {
         const splitData = splitInput(arrayData[i]);
         let average = 0
         for (var d = 0; d < splitData.length; d++) {
-            average = levenshtein(splitData[d], searchTerm) + average / 2
+            average = levenshtein(splitData[d], searchTerm) + average / 2;
         }
-        ranked.push(average)
+        ranked.push(average);
     }
     console.log(ranked)
     for (var i = 0; i < arrayData.length; i++) {
         const smallest = Math.min(...ranked);
-        const position = ranked.indexOf(smallest)
-        dataRanked.push(data[position])
-        ranked[position] = 999
+        const position = ranked.indexOf(smallest);
+        dataRanked.push(data[position]);
+        ranked[position] = 999;
     }
     return(dataRanked)
 }
 
-function search(){
-    
+function getSearchTerm(){
+        const hash = window.location.hash;
+        if (hash.length > 1) {
+            const encodedString = hash.substring(1);
+            const decodedString = decodeURIComponent(encodedString);
+            
+            return decodedString;
+        } else {
+            return null;
+        }
 }
+
+function removeFromArray(array, keyToRemove) {
+        if (!Array.isArray(array)) {
+        console.error("Input is not an array.");
+        return array;
+    }
+    return array.map(obj => {
+        const newObj = { ...obj };
+        delete newObj[keyToRemove];
+        return newObj;
+    });
+}
+
+async function fetchGitHubRawContent(username, repository, path) {
+    try {
+        const url = `https://raw.githubusercontent.com/${username}/${repository}/master/${path}`;
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error('Failed to fetch raw content');
+        }
+        const rawContent = await response.text();
+        return rawContent;
+    } catch (error) {
+        console.error('Error fetching raw content:', error);
+        return null;
+    }
+}
+
+    fetchGitHubRawContent("baztube", "zspolackova-noviny", "clanky.json")
+    .then(rawContent => {
+        console.log('Raw content:', rawContent);
+        const searchContent = removeFromArray(rawContent, "html")
+        const searchTerm = getSearchTerm();
+        console.log(extractNames(searchContent))
+        searchData(searchTerm, searchContent);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
