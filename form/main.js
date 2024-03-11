@@ -51,16 +51,16 @@ buildPage()
 function buildPage(){  
     let page = `
     <!DOCTYPE html>
-    <html lang="en">
+    <html lang='en'>
       <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset='UTF-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <title>${name} - Školní noviny ZŠ Poláčkova</title>
-        <link rel="icon" type="image/x-icon" href="../logo-light.png" />
+        <link rel='icon' type='image/x-icon' href='../logo-light.png' />
       </head>
     
       <style>
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
     
     * {
       margin: 0;
@@ -73,7 +73,7 @@ function buildPage(){
     }
     
     body {
-      font-family: "Poppins", sans-serif;
+      font-family: 'Poppins', sans-serif;
       display: flex;
       justify-content: center;
       height: 100vh;
@@ -87,7 +87,7 @@ function buildPage(){
     }
     
     body .container header { 
-      background: linear-gradient(#0000, #000f), url("${image}") center / cover no-repeat ;
+      background: linear-gradient(#0000, #000f), url('${image}') center / cover no-repeat ;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -256,47 +256,47 @@ function buildPage(){
       </style>
     
       <body>
-        <div class="container">
+        <div class='container'>
           <header>
-            <div class="news-title">
-              <a href="../index.html"
-                ><img class="icon" src="../logo-light.png" /></a
-              ><a href="../index.html" class="name">ŠKOLNÍ NOVINY ZŠ POLÁČKOVÁ</a>
+            <div class='news-title'>
+              <a href='../index.html'
+                ><img class='icon' src='../logo-light.png' /></a
+              ><a href='../index.html' class='name'>ŠKOLNÍ NOVINY ZŠ POLÁČKOVÁ</a>
             </div>
-            <div class="info">
-              <div class="tags">
-                <i class="fa-solid fa-tag"></i>
+            <div class='info'>
+              <div class='tags'>
+                <i class='fa-solid fa-tag'></i>
                 <span>${category}</span>
               </div>
-              <h1 class="title">${name}</h1>
-              <p class="subtitle">
+              <h1 class='title'>${name}</h1>
+              <p class='subtitle'>
               ${description}
               </p>
             </div>
           </header>
     
-          <section class="details">
-            <div class="item">
-              <h5 class="item-title">Délka</h5>
-              <p class="item-text"><span class="item-data">${lenght}</span> ${minutes}</p>
+          <section class='details'>
+            <div class='item'>
+              <h5 class='item-title'>Délka</h5>
+              <p class='item-text'><span class='item-data'>${lenght}</span> ${minutes}</p>
             </div>
-            <div class="item">
-              <h5 class="item-title">Datum zveřenění</h5>
-              <p class="item-text">
-                <span class="item-data">${date}</span>
+            <div class='item'>
+              <h5 class='item-title'>Datum zveřenění</h5>
+              <p class='item-text'>
+                <span class='item-data'>${date}</span>
               </p>
             </div>
-            <div class="item">
-              <h5 class="item-title">Napsal</h5>
-              <p class="item-text"><span class="item-data">${author}</span></p>
+            <div class='item'>
+              <h5 class='item-title'>Napsal</h5>
+              <p class='item-text'><span class='item-data'>${author}</span></p>
             </div>
-            <div class="item">
-              <h5 class="item-title">Autor obrázku</h5>
-              <p class="item-text">
-                <span class="item-data"
+            <div class='item'>
+              <h5 class='item-title'>Autor obrázku</h5>
+              <p class='item-text'>
+                <span class='item-data'
                   ><a
-                    target="_blank"
-                    href="${linkToImage}"
+                    target='_blank'
+                    href='${linkToImage}'
                     >${imageAuthor}
                   </a>
                 </span>
@@ -315,6 +315,7 @@ function buildPage(){
 
     var myWindow = window.open("", "MsgWindow", "width=800,height=600");
   myWindow.document.write(page);
+  console.log(encodeURIComponent(page))
     return(page)
 }
 
@@ -322,10 +323,8 @@ function buildPage(){
 function imagePreview(){
   const preview = document.getElementById("preview")
   const image = document.getElementById("image")
-  const alt = document.getElementById("alt").value
   const [file] = image.files
   if (file) {
     preview.src = URL.createObjectURL(file)
-    preview.alt = alt
   }
 }
