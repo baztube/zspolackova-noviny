@@ -302,7 +302,7 @@ ul{
 }
 
 .easter-egg{
-  position: absolute;
+  position: fixed;
   top: -100px;
   right: 32px;
   transform: rotate(0.5turn);
