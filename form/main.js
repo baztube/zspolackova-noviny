@@ -1,55 +1,54 @@
-let name = ""
-let description = ""
-let urlName = ""
-let lenght = ""
-let minutes = ""
-let author = ""
-let imageAuthor = ""
-let linkToImage = ""
-let image = ""
-let category = ""
-let text = ""
-let date = ""
+let name = "";
+let description = "";
+let urlName = "";
+let lenght = "";
+let minutes = "";
+let author = "";
+let imageAuthor = "";
+let linkToImage = "";
+let image = "";
+let category = "";
+let text = "";
+let date = "";
 
-document.getElementById('image').addEventListener('change', function(event) {
+document.getElementById("image").addEventListener("change", function (event) {
   const file = event.target.files[0]; // Get the file
   const reader = new FileReader();
 
-  reader.onloadend = function() {
-      // This code runs once the FileReader has finished reading the file
-      const dataURI = reader.result;
-      console.log(dataURI); // You can see the Data URI in the console
-      // Now you can store it in a variable for later use. For example:
-      image = dataURI; // Storing it globally for demonstration; adjust as needed.
+  reader.onloadend = function () {
+    // This code runs once the FileReader has finished reading the file
+    const dataURI = reader.result;
+    console.log(dataURI); // You can see the Data URI in the console
+    // Now you can store it in a variable for later use. For example:
+    image = dataURI; // Storing it globally for demonstration; adjust as needed.
   };
 
   reader.readAsDataURL(file); // Read the file as Data URI
 });
 
+function getData() {
+  name = document.getElementById("name").value;
+  description = document.getElementById("description").value;
+  urlName = document.getElementById("urlName").value;
+  lenght = document.getElementById("lenght").value;
+  minutes = document.getElementById("minutes").value;
+  author = document.getElementById("author").value;
+  imageAuthor = document.getElementById("imageAuthor").value;
+  linkToImage = document.getElementById("linkToImage").value;
+  category = document.getElementById("category").value;
+  text = document.getElementById("text").value;
 
-function getData(){
-name = document.getElementById("name").value
-description = document.getElementById("description").value
-urlName = document.getElementById("urlName").value
-lenght = document.getElementById("lenght").value
-minutes = document.getElementById("minutes").value
-author = document.getElementById("author").value
-imageAuthor = document.getElementById("imageAuthor").value
-linkToImage = document.getElementById("linkToImage").value
-category = document.getElementById("category").value
-text = document.getElementById("text").value
-
-const today = new Date();
-const dd = String(today.getDate()).padStart(2, '0');
-const mm = String(today.getMonth() + 1).padStart(2, '0');
-const yyyy = today.getFullYear();
-date = dd + '.' + mm + '. ' + yyyy;
-console.log("succes")
-buildPage()
+  const today = new Date();
+  const dd = String(today.getDate()).padStart(2, "0");
+  const mm = String(today.getMonth() + 1).padStart(2, "0");
+  const yyyy = today.getFullYear();
+  date = dd + "." + mm + ". " + yyyy;
+  console.log("succes");
+  buildPage();
 }
 
-function buildPage(){  
-    let page = `
+function buildPage() {
+  let page = `
     <!DOCTYPE html>
     <html lang='en'>
       <head>
@@ -311,20 +310,31 @@ function buildPage(){
       </body>
     </html>
     
-    `
+    `;
 
-    var myWindow = window.open("", "MsgWindow", "width=800,height=600");
+  var myWindow = window.open("", "MsgWindow", "width=800,height=600");
   myWindow.document.write(page);
-  console.log(encodeURIComponent(page))
-    return(page)
+  console.log(encodeURIComponent(page));
+  return page;
 }
 
-
-function imagePreview(){
-  const preview = document.getElementById("preview")
-  const image = document.getElementById("image")
-  const [file] = image.files
+function imagePreview() {
+  const preview = document.getElementById("preview");
+  const image = document.getElementById("image");
+  const [file] = image.files;
   if (file) {
-    preview.src = URL.createObjectURL(file)
+    preview.src = URL.createObjectURL(file);
   }
+}
+
+function openDialog() {
+  var input = document.createElement("input");
+  input.type = "file";
+
+  input.onchange = (e) => {
+    imagePreview();
+    console.log("sup")
+  };
+
+  input.click();
 }

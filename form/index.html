@@ -13,7 +13,7 @@
 <body>
     <h1 class="pageTitle">Editor článků</h1>
     <div class="addArticleMenu">
-        <form style="width: 90%; max-width: 600px;">
+        <form style="width: 100%; max-width: 600px;">
             <h1 style="text-align: center;">Přidat článek</h1>
             
             <h3>Základní informace</h3>
@@ -32,10 +32,10 @@
                 <input id="urlName" required="" type="text" name="text" autocomplete="off" class="input">
                 <label class="user-label">URL Název</label>
             </div>
-            <div class="input-group">
-                <input id="lenght" type="number" onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'" required="" name="text" autocomplete="off" class="input">
+            <div class="input-group min">
+                <input id="lenght" type="number" onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'" required="" name="text" autocomplete="off" class="input num">
                 <label class="user-label">Délka čtení</label>
-                <select name="minutes" id="minutes" required>
+                <select class="select" name="minutes" id="minutes" required>
                         <option value="minuta">minuta</option>
                         <option value="minuty">minuty</option>
                         <option value="minut">minut</option>
@@ -49,6 +49,7 @@
                 <input id="category" required="" type="text" name="text" autocomplete="off" class="input">
                 <label class="user-label">Kategorie</label>
             </div>
+            <button class="send" type="button" onclick="openDialog()">Otevrit obrazek</button>
             <h3>Obrázek</h3>
             <div class="input-group">
                 <input id="imageAuthor" required="" type="text" name="text" autocomplete="off" class="input">
@@ -58,9 +59,9 @@
                 <input id="linkToImage" required="" type="text" name="text" autocomplete="off" class="input">
                 <label class="user-label">Odkaz na obrázek</label>
             </div>
-            <input onchange="imagePreview()" style="width: 100%;" id="image" type="file" accept="image/jpeg" required>
+            <input onchange="imagePreview()" style="width: 400px;" id="image" type="file" accept="image/jpeg" required>
             <!--musí být ve formátu JPG/JPEG-->
-            <img style="display: block; width: 100%; border-radius: 16px;" src="" alt="" id="preview">
+            <img style="display: block; width: 400px; border-radius: 16px;" src="" alt="" id="preview">
             <button class="send" type="button" onclick="getData()">Odeslat</button>
         </form>
     </div>
